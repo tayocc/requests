@@ -6,9 +6,8 @@ import (
     "testing"
 )
 
-func TestGet(t *testing.T) {
-    //测试Get请求
-    a1 := requests.Args{
+func TestClient_Get(t *testing.T) {
+    args := requests.Args{
         Headers: map[string]interface{}{
             "Content-Type": "application/json",
         },
@@ -17,14 +16,13 @@ func TestGet(t *testing.T) {
             "q2": "v2",
         },
     }
-    client1 := requests.Client{}
-    result1 := client1.Get("https://echo.apifox.com/get", a1)
-    fmt.Println(string(result1))
+    client := requests.Client{}
+    result := client.Get("https://echo.apifox.com/get", args)
+    fmt.Println(string(result))
 }
 
-func TestPost(t *testing.T) {
-    //测试Post请求
-    a2 := requests.Args{
+func TestClient_Post(t *testing.T) {
+    args := requests.Args{
         Headers: map[string]interface{}{
             "Content-Type": "application/json",
         },
@@ -39,7 +37,67 @@ func TestPost(t *testing.T) {
         },
     }
 
-    client2 := requests.Client{}
-    result2 := client2.Post("https://echo.apifox.com/post", a2)
-    fmt.Println(string(result2))
+    client := requests.Client{}
+    result := client.Post("https://echo.apifox.com/post", args)
+    fmt.Println(string(result))
+}
+
+func TestClient_Put(t *testing.T) {
+    args := requests.Args{
+        Headers: map[string]interface{}{
+            "Content-Type": "application/json",
+        },
+        Params: map[string]interface{}{
+            "q1": "v1",
+        },
+        Body: map[string]interface{}{
+            "test": "value",
+        },
+    }
+
+    client := requests.Client{}
+    result := client.Put("https://echo.apifox.com/put", args)
+    fmt.Println(string(result))
+}
+
+func TestClient_Delete(t *testing.T) {
+    args := requests.Args{
+        Headers: map[string]interface{}{
+            "Content-Type": "application/json",
+        },
+        Params: map[string]interface{}{
+            "q1": "v1",
+        },
+        Body: map[string]interface{}{
+            "b1": "v1",
+            "b2": "v2",
+        },
+    }
+
+    client := requests.Client{}
+    result := client.Delete("https://echo.apifox.com/delete", args)
+    fmt.Println(string(result))
+}
+
+func TestClient_Patch(t *testing.T) {
+    args := requests.Args{
+        Headers: map[string]interface{}{
+            "Content-Type": "application/json",
+        },
+        Params: map[string]interface{}{
+            "q1": "v1",
+        },
+    }
+
+    client := requests.Client{}
+    result := client.Patch("https://echo.apifox.com/patch", args)
+    fmt.Println(string(result))
+}
+
+func TestClient_Head(t *testing.T) {
+    args := requests.Args{}
+
+    client := requests.Client{}
+    result := client.Head("https://echo.apifox.com/get", args)
+    fmt.Println(result)
 }

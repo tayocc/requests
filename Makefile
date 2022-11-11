@@ -1,5 +1,8 @@
-GIT_TAG := v0.0.9
-DATE_NOW := $(shell date "+%Y%m%d_%H%M%S")
+#go model 的版本号
+Version := v0.0.9
+
+#git commit 的内容
+Time := $(shell date "+%Y%m%d_%H%M%S")
 
 
 .PHONY: start test git
@@ -16,7 +19,7 @@ test:
 
 git:
 	git add .
-	git commit -am "update_${DATE_NOW}"
-	git tag "${GIT_TAG}"
+	git commit -am "update_${Time}"
+	git tag "${Version}"
 	git push --tags
 
