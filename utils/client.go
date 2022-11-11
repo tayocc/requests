@@ -28,7 +28,7 @@ func (c *Client) Post(url string, args Args) []byte {
 }
 
 //func (c *Client) Put(url string, data []byte, args ...Args) {
-//
+///
 //}
 //
 //func (c *Client) Delete(url string, args ...Args) {
