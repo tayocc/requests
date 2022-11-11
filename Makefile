@@ -1,5 +1,5 @@
 #go model 的版本号
-Version := v0.0.9
+Version := v0.0.10
 
 #git commit 的内容
 Time := $(shell date "+%Y%m%d_%H%M%S")
