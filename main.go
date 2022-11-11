@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"requests/src/utils"
+	"github.com/tayocc/requests/src/utils"
 )
 
 func main() {
