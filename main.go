@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"requests/utils"
+	"requests/src/utils"
 )
 
 func main() {

@@ -1,3 +1,3 @@
-module github.com/tayocc/requests
+module requests
 
 go 1.16
