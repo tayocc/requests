@@ -196,7 +196,7 @@ func main() {
 		},
 	}
 	client1 := Client{}
-	result1 := client1.Get("http://cmdb02.linux.cc/api/v1/applications/lite/", a1)
+	result1 := client1.Get("http://cmdb02.zmops.cc/api/v1/applications/lite/", a1)
 	fmt.Println(string(result1))
 
 	//测试Post请求
